@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -41,7 +41,7 @@ mkSonicDerivation {
     qtshadertools
     qtsensors
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-frameworks-io
   ]);
 
@@ -57,8 +57,8 @@ mkSonicDerivation {
   hasPythonBindings = false;
 
   meta = {
-    description = "Daemon for handling keybinds in sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-keybind-daemon";
+    description = "Daemon for handling keybinds in Sonic-DE";
+    homepage = "https://github.com/Sonic-DE/sonic-keybind-daemon";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };

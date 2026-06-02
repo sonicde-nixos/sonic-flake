@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -107,7 +107,7 @@ mkSonicDerivation {
 
     qqc2-breeze-style
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-keybind-daemon
     sonic-frameworks-io
     sonic-frameworks-auth
@@ -127,8 +127,8 @@ mkSonicDerivation {
   hasPythonBindings = false;
 
   meta = {
-    description = "Application to handle screenlocking on sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-screenlocker";
+    description = "Application to handle screenlocking on Sonic-DE";
+    homepage = "https://github.com/Sonic-DE/sonic-screenlocker";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };

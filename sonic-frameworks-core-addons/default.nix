@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -15,16 +15,16 @@ mkSonicDerivation {
     qtdeclarative
     qttools
     qt5compat
-    extra-cmake-modules
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
+    sonic-frameworks-cmake-modules
   ]);
 
   propagatedDependencies = with pkgs; [
   ];
 
   extraNativeBuildInputs = with pkgs; [
-    kdePackages.extra-cmake-modules
+    Sonic-DE.sonic-frameworks-cmake-modules
     shared-mime-info
   ];
 
@@ -34,8 +34,8 @@ mkSonicDerivation {
   hasPythonBindings = true;
 
   meta = {
-    description = "Qt addon library with a collection of non-GUI utilities for sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-frameworks-core-addons";
+    description = "Qt addon library with a collection of non-GUI utilities for Sonic-DE";
+    homepage = "https://github.com/Sonic-DE/sonic-frameworks-core-addons";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };

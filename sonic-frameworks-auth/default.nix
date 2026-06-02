@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -17,7 +17,7 @@ mkSonicDerivation {
     kwindowsystem
     polkit-qt-1
   ]
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
   ]);
 
   propagatedDependencies = with pkgs; [
@@ -35,7 +35,7 @@ mkSonicDerivation {
 
   meta = {
     description = "Secure and integrated way to execute actions as privileged user in Sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-frameworks-auth";
+    homepage = "https://github.com/Sonic-DE/sonic-frameworks-auth";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };

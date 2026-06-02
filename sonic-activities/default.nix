@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -15,7 +15,7 @@ mkSonicDerivation {
     kconfig
     kcoreaddons
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
   ]);
 
   propagatedDependencies = with pkgs; [
@@ -31,7 +31,7 @@ mkSonicDerivation {
 
   meta = {
     description = "Provides the infrastructure needed to manage a user's activities";
-    homepage = "https://github.com/sonic-DE/sonic-activities";
+    homepage = "https://github.com/Sonic-DE/sonic-activities";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
     mainProgram = "plasma-activities-cli6";

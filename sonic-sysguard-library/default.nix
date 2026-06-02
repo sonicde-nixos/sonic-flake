@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -41,7 +41,7 @@ mkSonicDerivation {
     kjobwidgets
     kdoctools
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-frameworks-io
     sonic-frameworks-auth
   ]);
@@ -62,7 +62,7 @@ mkSonicDerivation {
 
   meta = {
     description = "Sonic-DE system monitoring framework";
-    homepage = "https://github.com/sonic-DE/sonic-sysguard-library";
+    homepage = "https://github.com/Sonic-DE/sonic-sysguard-library";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };

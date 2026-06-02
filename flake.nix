@@ -29,6 +29,11 @@
       flake = false;
     };
 
+    sonic-frameworks-cmake-modules = {
+      url = "github:sonic-DE/sonic-frameworks-cmake-modules/6.26.0";
+      flake = false;
+    };
+
     sonic-frameworks-core-addons = {
       url = "github:sonic-DE/sonic-frameworks-core-addons/6.26.0";
       flake = false;
@@ -113,6 +118,7 @@
       sonic-decoration = "6.6.5";
       sonic-desktop-interface = "6.6.5";
       sonic-frameworks-auth = "6.26.0";
+      sonic-frameworks-cmake-modules = "6.26.0";
       sonic-frameworks-core-addons = "6.26.0";
       sonic-frameworks-io = "6.26.0";
       sonic-interface-libraries = "6.6.5";
@@ -132,11 +138,11 @@
         let
           src = inputs.${pname};
           version = sonicVersions.${pname};
-          sonic-DE = self.packages.${system};
+          Sonic-DE = self.packages.${system};
         in
         {
           name = pname;
-          value = import (./. + "/${pname}/default.nix") { inherit mkSonicDerivation pkgs pname src version sonic-DE; };
+          value = import (./. + "/${pname}/default.nix") { inherit mkSonicDerivation pkgs pname src version Sonic-DE; };
         }
       ) pkgDirs
     );

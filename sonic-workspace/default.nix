@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -187,7 +187,7 @@ mkSonicDerivation {
 
     breeze
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-win
     sonic-frameworks-io
     sonic-frameworks-auth
@@ -216,7 +216,7 @@ mkSonicDerivation {
 
   meta = {
     description = "The base of the Sonic Desktop";
-    homepage = "https://github.com/sonic-DE/sonic-workspace";
+    homepage = "https://github.com/Sonic-DE/sonic-workspace";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };

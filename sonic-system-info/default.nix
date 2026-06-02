@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation (
 let 
@@ -93,7 +93,7 @@ in
     kwidgetsaddons
     kxmlgui
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-frameworks-io
     sonic-frameworks-core-addons
     sonic-frameworks-auth
@@ -126,7 +126,7 @@ in
 
   meta = {
     description = "A handy tool to view information about your system on Sonic-DE!";
-    homepage = "https://github.com/sonic-DE/sonic-system-info";
+    homepage = "https://github.com/Sonic-DE/sonic-system-info";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };

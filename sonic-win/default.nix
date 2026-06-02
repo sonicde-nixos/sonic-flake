@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -109,7 +109,7 @@ mkSonicDerivation {
     libqaccessibilityclient
     qtquick3d
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-frameworks-auth
     sonic-keybind-daemon
     sonic-interface-libraries
@@ -135,7 +135,7 @@ mkSonicDerivation {
 
   meta = {
     description = "An x11 focused fork of kwin, used in Sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-win";
+    homepage = "https://github.com/Sonic-DE/sonic-win";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
     mainProgram = "kwin_x11";

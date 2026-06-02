@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -47,7 +47,7 @@ mkSonicDerivation {
     ki18n
     kwidgetsaddons
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-frameworks-auth
   ]);
 
@@ -65,8 +65,8 @@ mkSonicDerivation {
   hasPythonBindings = false;
 
   meta = {
-    description = "Network transparent access to files and data for sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-frameworks-io";
+    description = "Network transparent access to files and data for Sonic-DE";
+    homepage = "https://github.com/Sonic-DE/sonic-frameworks-io";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };

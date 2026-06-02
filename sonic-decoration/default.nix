@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -13,7 +13,7 @@ mkSonicDerivation {
     ki18n
     kcoreaddons
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
   ]);
 
   propagatedDependencies = with pkgs; [
@@ -28,8 +28,8 @@ mkSonicDerivation {
   hasPythonBindings = false;
 
   meta = {
-    description = "Plugin based library to create window decorations for use in sonic-DE";
-    homepage = "https://github.com/sonic-DE/sonic-decorations";
+    description = "Plugin based library to create window decorations for use in Sonic-DE";
+    homepage = "https://github.com/Sonic-DE/Sonic-DEcorations";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };

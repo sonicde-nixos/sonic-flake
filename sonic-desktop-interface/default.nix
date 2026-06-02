@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation (
 let
@@ -138,7 +138,7 @@ in
     packagekit-qt
 
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-win
     sonic-workspace
   ]);
@@ -157,7 +157,7 @@ in
 
   meta = {
     description = "The Sonic-DE shell!";
-    homepage = "https://github.com/sonic-DE/sonic-desktop-interface";
+    homepage = "https://github.com/Sonic-DE/Sonic-DEsktop-interface";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };

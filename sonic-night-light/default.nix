@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -17,7 +17,7 @@ mkSonicDerivation {
     kdbusaddons
     kholidays
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
   ]);
 
   propagatedDependencies = with pkgs; [
@@ -33,7 +33,7 @@ mkSonicDerivation {
 
   meta = {
     description = "Provides helpers for scheduling the day-night cycle.";
-    homepage = "https://github.com/sonic-DE/sonic-night-light";
+    homepage = "https://github.com/Sonic-DE/sonic-night-light";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };

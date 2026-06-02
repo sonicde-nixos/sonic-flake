@@ -1,4 +1,4 @@
-{ pkgs, pname, src, version, sonic-DE, ... }:
+{ pkgs, pname, src, version, Sonic-DE, ... }:
 
 # a mkSonicDerivation function call is not necessary here.
 pkgs.stdenv.mkDerivation (finalAttrs: {
@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = with pkgs; [
     cmake
     ninja
-    kdePackages.extra-cmake-modules
+    Sonic-DE.sonic-frameworks-cmake-modules
     kdePackages.wrapQtAppsHook
   ];
 

@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -30,7 +30,7 @@ mkSonicDerivation {
     kcmutils
     ksvg
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-keybind-daemon
     sonic-frameworks-io
   ]);
@@ -49,7 +49,7 @@ mkSonicDerivation {
 
   meta = {
     description = "x11 focused fork of libplasma, for use in the sonic desktop environment";
-    homepage = "https://github.com/sonic-DE/sonic-interface-libraries";
+    homepage = "https://github.com/Sonic-DE/sonic-interface-libraries";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };

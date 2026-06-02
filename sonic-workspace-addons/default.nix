@@ -1,4 +1,4 @@
-{ mkSonicDerivation, pkgs, pname, src, version, sonic-DE, ... }:
+{ mkSonicDerivation, pkgs, pname, src, version, Sonic-DE, ... }:
 
 mkSonicDerivation {
 
@@ -40,7 +40,7 @@ mkSonicDerivation {
     qtquick3d
     kirigami-addons
   ])
-  ++ (with sonic-DE; [
+  ++ (with Sonic-DE; [
     sonic-frameworks-io
   ]);
 
@@ -57,7 +57,7 @@ mkSonicDerivation {
 
   meta = {
     description = "All kind of add-ons to improve your Sonic experience.";
-    homepage = "https://github.com/sonic-DE/sonic-workspace-addons";
+    homepage = "https://github.com/Sonic-DE/sonic-workspace-addons";
     license = pkgs.lib.licenses.gpl2Plus;
     platforms = pkgs.lib.platforms.linux;
   };
