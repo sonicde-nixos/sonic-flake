@@ -20,6 +20,7 @@ Current Version: __6.6.5 / 6.26.0 !__
 | sonic-desktop-interface                        | Working!                                                              | plasma-desktop                                                        |
 | sonic-frameworks-auth                          | Working!                                                              | kauth                                                                 |
 | sonic-frameworks-core-addons                   | Working!                                                              | kcoreaddons                                                           |
+| sonic-frameworks-cmake-modules                 | Working!                                                              | extra-cmake-modules                                                   |
 | sonic-frameworks-io                            | Working!                                                              | kio                                                                   |
 | sonic-interface-libraries                      | Working!                                                              | libplasma                                                             |
 | sonic-keybind-daemon                           | Working!                                                              | kglobalacceld                                                         |
