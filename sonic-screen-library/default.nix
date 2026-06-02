@@ -10,16 +10,18 @@ mkSonicDerivation {
   buildDependencies = with pkgs; [
   ] 
   ++ (with pkgs.kdePackages; [
-    ki18n
-    kcoreaddons
+    qttools
   ])
   ++ (with Sonic-DE; [
+    sonic-frameworks-cmake-modules
   ]);
 
   propagatedDependencies = with pkgs; [
   ];
 
   extraNativeBuildInputs = with pkgs; [
+    kdePackages.qttools
+    jq
   ];
 
   extraCmakeFlags = with pkgs; [
@@ -28,9 +30,10 @@ mkSonicDerivation {
   hasPythonBindings = false;
 
   meta = {
-    description = "Plugin based library to create window decorations for use in Sonic-DE";
-    homepage = "https://github.com/Sonic-DE/Sonic-DEcorations";
+    description = "Screen management library for Sonic-DE!";
+    homepage = "https://github.com/Sonic-DE/sonic-screen-library";
     license = pkgs.lib.licenses.gpl2Plus;
-    platform = pkgs.lib.platforms.linux;
+    platforms = pkgs.lib.platforms.linux;
+    mainProgram = "kscreen-doctor";
   };
 }

@@ -10,27 +10,29 @@ mkSonicDerivation {
   buildDependencies = with pkgs; [
   ] 
   ++ (with pkgs.kdePackages; [
-    ki18n
-    kcoreaddons
+    qtdeclarative
   ])
   ++ (with Sonic-DE; [
+    sonic-frameworks-cmake-modules
   ]);
 
   propagatedDependencies = with pkgs; [
   ];
 
   extraNativeBuildInputs = with pkgs; [
+    pkg-config
   ];
 
   extraCmakeFlags = with pkgs; [
   ];
 
-  hasPythonBindings = false;
+  hasPythonBindings = true;
 
   meta = {
-    description = "Plugin based library to create window decorations for use in Sonic-DE";
-    homepage = "https://github.com/Sonic-DE/Sonic-DEcorations";
+    description = "Utilities for graphical user interfaces on Sonic-DE!";
+    homepage = "https://github.com/Sonic-DE/sonic-frameworks-gui-addons";
     license = pkgs.lib.licenses.gpl2Plus;
-    platform = pkgs.lib.platforms.linux;
+    platforms = pkgs.lib.platforms.linux;
+    mainProgram = "kde-geo-uri-handler";
   };
 }
