@@ -1,0 +1,47 @@
+diff --git a/src/nixos_utils.h b/src/nixos_utils.h
+new file mode 100644
+index 0000000..726065d
+--- /dev/null
++++ b/src/nixos_utils.h
+@@ -0,0 +1,41 @@
++#ifndef NIXOS_UTILS_H
++#define NIXOS_UTILS_H
++
++// kwin
++// #include <kwinglobals.h>
++
++namespace KWin
++{
++
++static QString unwrapExecutablePath(const QString &in_executablePath)
++{
++    // NixOS fixes many packaging issues through "wrapper" scripts that manipulates the environment or does
++    // miscellaneous trickeries and mischievous things to make the programs work.
++    // In turn, programs often employs different mischievous schemes and trickeries to do *other things.
++    // It often happens that they conflict.
++    // Here, `kwin` tries to detect the .desktop file for a given process.
++    // `kwin` followed the process `/proc/.../exe` up to the actual binary running.
++    // It normally would be fine, e.g. /usr/bin/foobar is what's in the desktop file.
++    // But it's not the truth here! It's extremely likely the resolved path is /nix/store/.../bin/.foobar-wrapped
++    // rather than what the desktop file points to, something like /nix/store/.../bin/foobar !!
++    // Since the wrappers for Nixpkgs *always* prepend a dot and append -wrapped, we assume here that we can keep
++    // `/^(.*)\/\.([^/]*)-wrapped/` until the (equivalent) regex does not match.
++    // This should canonicalize the wrapper name to the expected name to look for in the desktop file.
++
++    // Use a copy of the const string
++    QString executablePath(in_executablePath);
++
++    // While the parts needed are present, "unwrap" one layer of wrapper names.
++    while (executablePath.endsWith("-wrapped") && executablePath[executablePath.lastIndexOf("/")+1] == QChar('.')) {
++        // Approximately equivalent to s/-wrapped$//
++        executablePath.remove(executablePath.length() - 8, 8);
++        // Approximately equivalent to s;/\.;/;
++        executablePath.remove(executablePath.lastIndexOf("/")+1, 1);
++    }
++
++    return executablePath;
++}
++
++}// namespace
++
++#endif // NIXOS_UTILS_H
