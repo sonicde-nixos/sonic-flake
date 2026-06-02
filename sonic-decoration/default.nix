@@ -29,7 +29,7 @@ mkSonicDerivation {
 
   meta = {
     description = "Plugin based library to create window decorations for use in Sonic-DE";
-    homepage = "https://github.com/Sonic-DE/Sonic-DEcorations";
+    homepage = "https://github.com/Sonic-DE/sonic-decorations";
     license = pkgs.lib.licenses.gpl2Plus;
     platform = pkgs.lib.platforms.linux;
   };
