@@ -1,3 +1,10 @@
+# most of the comments in this file are sections of code
+# that pertain to automatically generating dependencies from
+# json files. We do not have an equivalent. This, however, does
+# not affect the functionality of any projects, as instead we can just
+# take the normal nix route of specifying dependencies in the function
+# call. I don't think this'll ever be an issue.
+
 self:
 {
   lib,

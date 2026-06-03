@@ -10,16 +10,22 @@ mkSonicDerivation {
   buildDependencies = with pkgs; [
   ] 
   ++ (with pkgs.kdePackages; [
+    kconfig
     ki18n
-    kcoreaddons
+    kwindowsystem
+    kitemmodels
   ])
   ++ (with Sonic-DE; [
+    sonic-activities
+    sonic-frameworks-cmake-modules
+    sonic-frameworks-core-addons
   ]);
 
   propagatedDependencies = with pkgs; [
   ];
 
   extraNativeBuildInputs = with pkgs; [
+    kdePackages.kconfig
   ];
 
   extraCmakeFlags = with pkgs; [
@@ -28,9 +34,9 @@ mkSonicDerivation {
   hasPythonBindings = false;
 
   meta = {
-    description = "Plugin based library to create window decorations for use in Sonic-DE";
-    homepage = "https://github.com/Sonic-DE/Sonic-DEcorations";
+    description = "A handy tool to run your programs on Sonic-DE!";
+    homepage = "https://github.com/Sonic-DE/sonic-frameworks-runner";
     license = pkgs.lib.licenses.gpl2Plus;
-    platform = pkgs.lib.platforms.linux;
+    platforms = pkgs.lib.platforms.linux;
   };
 }
