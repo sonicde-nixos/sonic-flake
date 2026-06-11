@@ -1,6 +1,6 @@
 # The Sonic-DE Flake!
 
-The Sonic Desktop Environment (or just sonic-DE!) is a fork of the KDE that focuses on retaining x11 aspects of code for a hopefully more stable codebase. NixOS support is progressing steadily!
+The Sonic Desktop Environment (or just sonic-DE!) is a fork of the KDE that focuses on retaining x11 aspects of code for a hopefully more stable codebase.
 
 Here are some handy links if you want to get in touch with the team!
 
