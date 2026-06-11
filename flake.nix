@@ -79,6 +79,11 @@
       flake = false;
     };
 
+    sonic-login-manager = {
+      url = "github:sonic-DE/sonic-login-manager/6.6.5.6";
+      flake = false;
+    };
+
     sonic-network-manager = {
       url = "github:sonic-DE/sonic-network-manager/6.6.5";
       flake = false;
@@ -173,6 +178,7 @@
       sonic-frameworks-windowsystem = "6.26.0";
       sonic-interface-libraries = "6.6.5";
       sonic-keybind-daemon = "6.6.5";
+      sonic-login-manager = "6.6.5.6";
       sonic-network-manager = "6.6.5";
       sonic-night-light = "6.6.5";
       sonic-screen = "6.6.5";
