@@ -53,7 +53,7 @@ flake.nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # nixos-26.05 is also supported!
-    sonic-de.url = "github:sonicde-nixos/wip-flake/mkSonicDerivation2";
+    sonic-de.url = "github:sonicde-nixos/sonic-flake/";
     sonic-de.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, nixpkgs, sonic-de ... }@inputs: {
