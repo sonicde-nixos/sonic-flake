@@ -14,13 +14,13 @@ in
   qtWrapperArgs = [ "--prefix PATH : ${pkgs.lib.makeBinPath [ gsettings-wrapper ]}" ];
 
   patches = [
-    (pkgs.replaceVars ./hwclock-path.patch {
-      hwclock = "${pkgs.lib.getBin pkgs.util-linux}/bin/hwclock";
-    })
+    #(pkgs.replaceVars ./hwclock-path.patch {
+    #  hwclock = "${pkgs.lib.getBin pkgs.util-linux}/bin/hwclock";
+    #})
     (pkgs.replaceVars ./kcm-access.patch {
       gsettings = "${gsettings-wrapper}/bin/gsettings";
     })
-    ./tzdir.patch
+    #./tzdir.patch
     #./no-discover-shortcut.patch  # appears to have already been done?
     (pkgs.replaceVars ./wallpaper-paths.patch {
       wallpapers = "${pkgs.lib.getBin pkgs.kdePackages.breeze}/share/wallpapers";

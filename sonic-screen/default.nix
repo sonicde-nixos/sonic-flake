@@ -26,6 +26,8 @@ mkSonicDerivation {
     libkscreen
     kpackage
     kimageformats
+    kitemmodels
+    plasma5support
   ])
   ++ (with Sonic-DE; [
     sonic-frameworks-cmake-modules

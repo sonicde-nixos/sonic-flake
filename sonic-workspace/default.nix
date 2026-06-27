@@ -7,7 +7,7 @@ mkSonicDerivation {
   patches = [
     (pkgs.replaceVars ./dependency-paths.patch {
       fcMatch = pkgs.lib.getExe' pkgs.fontconfig "fc-match";
-      lsof = pkgs.lib.getExe pkgs.lsof;
+      #lsof = pkgs.lib.getExe pkgs.lsof;
       qdbus = pkgs.lib.getExe' pkgs.kdePackages.qttools "qdbus";
       xmessage = pkgs.lib.getExe pkgs.xmessage;
       xrdb = pkgs.lib.getExe pkgs.xrdb;

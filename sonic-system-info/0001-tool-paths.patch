@@ -317,15 +317,18 @@ diff --git a/kcms/sensors/main.cpp b/kcms/sensors/main.cpp
 index 8dae9f8f..ee70f381 100644
 --- a/kcms/sensors/main.cpp
 +++ b/kcms/sensors/main.cpp
-@@ -18,7 +18,7 @@ public:
-     explicit KCMSensors(QObject *parent, const KPluginMetaData &data)
+@@ -21,9 +21,9 @@ public:
          : KQuickConfigModule(parent, data)
      {
--        m_outputContext = new CommandOutputContext(u"sensors"_s, {}, parent);
-+        m_outputContext = new CommandOutputContext(u"@sensors@"_s, {}, parent);
+         if (QLocale().measurementSystem() == QLocale::ImperialUSSystem) {
+-            m_outputContext = new CommandOutputContext(u"sensors"_s, {u"-f"_s}, parent);
++            m_outputContext = new CommandOutputContext(u"@sensors@"_s, {u"-f"_s}, parent);
+         } else {
+-            m_outputContext = new CommandOutputContext(u"sensors"_s, {}, parent);
++            m_outputContext = new CommandOutputContext(u"@sensors@"_s, {}, parent);
+         }
          m_outputContext->setAutoRefreshMs(1000);
      }
-     CommandOutputContext *outputContext() const
 diff --git a/kcms/vulkan/kcm_vulkan.json b/kcms/vulkan/kcm_vulkan.json
 index ca4cf9e0..4f6af805 100644
 --- a/kcms/vulkan/kcm_vulkan.json

@@ -13,11 +13,12 @@ mkSonicDerivation {
     qttools
     qt5compat
 
-    kcoreaddons
-    kwindowsystem
     polkit-qt-1
   ]
   ++ (with Sonic-DE; [
+    sonic-frameworks-cmake-modules
+    sonic-frameworks-core-addons
+    sonic-frameworks-windowsystem
   ]);
 
   propagatedDependencies = with pkgs; [

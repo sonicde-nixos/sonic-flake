@@ -40,15 +40,18 @@ mkSonicDerivation {
     kwallet
     knotifications
     kded
-    kwindowsystem
+    #kwindowsystem
     kxmlgui
     kconfig
-    kcoreaddons
+    #kcoreaddons
     ki18n
     kwidgetsaddons
   ])
   ++ (with Sonic-DE; [
     sonic-frameworks-auth
+    sonic-frameworks-cmake-modules
+    sonic-frameworks-core-addons
+    sonic-frameworks-windowsystem
   ]);
 
   propagatedDependencies = with pkgs; [

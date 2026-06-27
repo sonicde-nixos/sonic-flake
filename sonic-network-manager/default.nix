@@ -15,6 +15,7 @@ mkSonicDerivation {
     mobile-broadband-provider-info
     openconnect
     libsysprof-capture
+    qt6Packages.qtkeychain
   ] 
   ++ (with pkgs.kdePackages; [
     qttools

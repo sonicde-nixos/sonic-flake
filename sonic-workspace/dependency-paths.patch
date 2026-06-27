@@ -1,16 +1,3 @@
-diff --git a/applets/devicenotifier/devicemessagemonitor_p.cpp b/applets/devicenotifier/devicemessagemonitor_p.cpp
-index 173fec78c1..0519424f71 100644
---- a/applets/devicenotifier/devicemessagemonitor_p.cpp
-+++ b/applets/devicenotifier/devicemessagemonitor_p.cpp
-@@ -118,7 +118,7 @@ void DeviceMessageMonitor::queryBlockingApps(const QString &devicePath)
-         Q_EMIT blockingAppsReady(blockApps);
-         p->deleteLater();
-     });
--    p->start(QStringLiteral("lsof"), {QStringLiteral("-t"), devicePath});
-+    p->start(QStringLiteral("@lsof@"), {QStringLiteral("-t"), devicePath});
-     //    p.start(QStringLiteral("fuser"), {QStringLiteral("-m"), devicePath});
- }
- 
 diff --git a/kcms/fonts/fontinit.cpp b/kcms/fonts/fontinit.cpp
 index e27e21a7bd..abbf7f32e1 100644
 --- a/kcms/fonts/fontinit.cpp

@@ -2,7 +2,7 @@
   description = "Sonic-DE flake with multiple packages";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     
     silver-theme = {
       url = "github:sonic-DE/silver-theme/6.6.0";
@@ -10,132 +10,132 @@
     };
 
     sonic-activities = {
-      url = "github:sonic-DE/sonic-activities/6.6.5";
+      url = "github:sonic-DE/sonic-activities/6.7.1";
       flake = false;
     };
 
     sonic-audio-applet-pulse = {
-      url = "github:sonic-DE/sonic-audio-applet-pulse/6.6.5";
+      url = "github:sonic-DE/sonic-audio-applet-pulse/6.7.1";
       flake = false;
     };
 
     sonic-decoration = {
-      url = "github:sonic-DE/sonic-decoration/6.6.5";
+      url = "github:sonic-DE/sonic-decoration/6.7.1";
       flake = false;
     };
 
     sonic-desktop-interface = {
-      url = "github:sonic-DE/sonic-desktop-interface/6.6.5";
+      url = "github:sonic-DE/sonic-desktop-interface/6.7.1.1";
       flake = false;
     };
     
     sonic-frameworks-auth = {
-      url = "github:sonic-DE/sonic-frameworks-auth/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-auth/6.27.0";
       flake = false;
     };
 
     sonic-frameworks-cmake-modules = {
-      url = "github:sonic-DE/sonic-frameworks-cmake-modules/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-cmake-modules/6.27.0.1";
       flake = false;
     };
 
     sonic-frameworks-core-addons = {
-      url = "github:sonic-DE/sonic-frameworks-core-addons/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-core-addons/6.27.0";
       flake = false;
     };
 
     sonic-frameworks-gui-addons = {
-      url = "github:sonic-DE/sonic-frameworks-gui-addons/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-gui-addons/6.27.0";
       flake = false;
     };
 
     sonic-frameworks-io = {
-      url = "github:sonic-DE/sonic-frameworks-io/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-io/6.27.0";
       flake = false;
     };
 
     sonic-frameworks-keybind = {
-      url = "github:sonic-DE/sonic-frameworks-keybind/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-keybind/6.27.0";
       flake = false;
     };
 
     sonic-frameworks-runner = {
-      url = "github:sonic-DE/sonic-frameworks-runner/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-runner/6.27.0";
       flake = false;
     };
 
     sonic-frameworks-windowsystem = {
-      url = "github:sonic-DE/sonic-frameworks-windowsystem/6.26.0";
+      url = "github:sonic-DE/sonic-frameworks-windowsystem/6.27.0";
       flake = false;
     };
 
     sonic-interface-libraries = {
-      url = "github:sonic-DE/sonic-interface-libraries/6.6.5";
+      url = "github:sonic-DE/sonic-interface-libraries/6.7.1";
       flake = false;
     };
 
     sonic-keybind-daemon = {
-      url = "github:sonic-DE/sonic-keybind-daemon/6.6.5";
+      url = "github:sonic-DE/sonic-keybind-daemon/6.7.1";
       flake = false;
     };
 
-    #sonic-login-manager = {
-    #  url = "github:sonic-DE/sonic-login-manager/6.6.5.6";
-    #  flake = false;
-    #};
+    sonic-login-manager = {
+      url = "github:sonic-DE/sonic-login-manager/6.7.1.1";
+      flake = false;
+    };
 
     sonic-network-manager = {
-      url = "github:sonic-DE/sonic-network-manager/6.6.5";
+      url = "github:sonic-DE/sonic-network-manager/6.7.1";
       flake = false;
     };
 
     sonic-night-light = {
-      url = "github:sonic-DE/sonic-night-light/6.6.5";
+      url = "github:sonic-DE/sonic-night-light/6.7.1";
       flake = false;
     };
 
     sonic-screen = {
-      url = "github:sonic-DE/sonic-screen/6.6.5";
+      url = "github:sonic-DE/sonic-screen/6.7.1";
       flake = false;
     };
 
     sonic-screen-library = {
-      url = "github:sonic-DE/sonic-screen-library/6.6.5";
+      url = "github:sonic-DE/sonic-screen-library/6.7.1";
       flake = false;
     };
 
     sonic-screenlocker = {
-      url = "github:sonic-DE/sonic-screenlocker/6.6.5.2";
+      url = "github:sonic-DE/sonic-screenlocker/6.7.1";
       flake = false;
     };
 
     sonic-sysguard-library = {
-      url = "github:sonic-DE/sonic-sysguard-library/6.6.5";
+      url = "github:sonic-DE/sonic-sysguard-library/6.7.1";
       flake = false;
     };
 
     sonic-system-info = {
-      url = "github:sonic-DE/sonic-system-info/6.6.5";
+      url = "github:sonic-DE/sonic-system-info/6.7.1";
       flake = false;
     };
 
     sonic-win = {
-      url = "github:sonic-DE/sonic-win/6.6.5";
+      url = "github:sonic-DE/sonic-win/6.7.1";
       flake = false;
     };
 
     sonic-workspace = {
-      url = "github:sonic-DE/sonic-workspace/6.6.5";
+      url = "github:sonic-DE/sonic-workspace/6.7.1";
       flake = false;
     };
 
     sonic-workspace-addons = {
-      url = "github:sonic-DE/sonic-workspace-addons/6.6.5";
+      url = "github:sonic-DE/sonic-workspace-addons/6.7.1";
       flake = false;
     };
 
     sonic-workspace-wallpapers = {
-      url = "github:sonic-DE/sonic-workspace-addons/6.6.5";
+      url = "github:sonic-DE/sonic-workspace-addons/6.7.1";
       flake = false;
     };
 
@@ -164,32 +164,32 @@
     sonicVersions = {
       
       silver-theme = "6.6.0";
-      sonic-activities = "6.6.5";
-      sonic-audio-applet-pulse = "6.6.5";
-      sonic-decoration = "6.6.5";
-      sonic-desktop-interface = "6.6.5";
-      sonic-frameworks-auth = "6.26.0";
-      sonic-frameworks-cmake-modules = "6.26.0";
-      sonic-frameworks-core-addons = "6.26.0";
-      sonic-frameworks-gui-addons = "6.26.0";
-      sonic-frameworks-io = "6.26.0";
-      sonic-frameworks-keybind = "6.26.0";
-      sonic-frameworks-runner = "6.26.0";
-      sonic-frameworks-windowsystem = "6.26.0";
-      sonic-interface-libraries = "6.6.5";
-      sonic-keybind-daemon = "6.6.5";
-      #sonic--manager = "6.6.5.6";
-      sonic-network-manager = "6.6.5";
-      sonic-night-light = "6.6.5";
-      sonic-screen = "6.6.5";
-      sonic-screen-library = "6.6.5";
-      sonic-screenlocker = "6.6.5.2";
-      sonic-sysguard-library = "6.6.5";
-      sonic-system-info = "6.6.5";
-      sonic-win = "6.6.5";
-      sonic-workspace = "6.6.5";
-      sonic-workspace-addons = "6.6.5";
-      sonic-workspace-wallpapers = "6.6.5";
+      sonic-activities = "6.7.1";
+      sonic-audio-applet-pulse = "6.7.1";
+      sonic-decoration = "6.7.1";
+      sonic-desktop-interface = "6.7.1.1";
+      sonic-frameworks-auth = "6.27.0";
+      sonic-frameworks-cmake-modules = "6.27.0.1";
+      sonic-frameworks-core-addons = "6.27.0";
+      sonic-frameworks-gui-addons = "6.27.0";
+      sonic-frameworks-io = "6.27.0";
+      sonic-frameworks-keybind = "6.27.0";
+      sonic-frameworks-runner = "6.27.0";
+      sonic-frameworks-windowsystem = "6.27.0";
+      sonic-interface-libraries = "6.7.1";
+      sonic-keybind-daemon = "6.7.1";
+      sonic-login-manager = "6.7.1.1";
+      sonic-network-manager = "6.7.1";
+      sonic-night-light = "6.7.1";
+      sonic-screen = "6.7.1";
+      sonic-screen-library = "6.7.1";
+      sonic-screenlocker = "6.7.1.1";
+      sonic-sysguard-library = "6.7.1";
+      sonic-system-info = "6.7.1";
+      sonic-win = "6.7.1";
+      sonic-workspace = "6.7.1";
+      sonic-workspace-addons = "6.7.1";
+      sonic-workspace-wallpapers = "6.7.1";
     };
   in
   rec {

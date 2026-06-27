@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c07ed50..981f33f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -138,8 +138,8 @@ set(RUNTIME_DIR                 "${RUNTIME_DIR_DEFAULT}"
+ set(SESSION_COMMAND             "${DATA_INSTALL_DIR}/scripts/Xsession"                          CACHE PATH      "Script to execute when starting the X11 desktop session")
+ set(WAYLAND_SESSION_COMMAND     "${DATA_INSTALL_DIR}/scripts/wayland-session"                   CACHE PATH      "Script to execute when starting the Wayland desktop session")
+
+-set(CONFIG_FILE                 "${CMAKE_INSTALL_FULL_SYSCONFDIR}/soniclogin.conf"             CACHE PATH      "Path of the soniclogin config file")
+-set(CONFIG_DIR                  "${CMAKE_INSTALL_FULL_SYSCONFDIR}/soniclogin.conf.d"           CACHE PATH      "Path of the soniclogin config directory")
++set(CONFIG_FILE                 "/etc/soniclogin.conf"             CACHE PATH      "Path of the soniclogin config file")
++set(CONFIG_DIR                  "/etc/soniclogin.conf.d"           CACHE PATH      "Path of the soniclogin config directory")
+ set(SYSTEM_CONFIG_DIR           "${CMAKE_INSTALL_PREFIX}/lib/soniclogin/soniclogin.conf.d"    CACHE PATH      "Path of the system soniclogin config directory")
+ set(LOG_FILE                    "/var/log/sonic/loginmanager.log"                               CACHE PATH      "Path of the soniclogin log file")
+ set(DBUS_CONFIG_FILENAME        "org.freedesktop.DisplayManager.conf"                           CACHE STRING    "Name of the soniclogin config file")
