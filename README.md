@@ -4,13 +4,15 @@ The Sonic Desktop Environment (or just sonic-DE!) is a fork of the KDE that focu
 
 Here are some handy links if you want to get in touch with the team!
 
+The Sonic Desktop Environment will build on your machine. Please be patient!
+
 [Matrix](https://matrix.to/#/#sonicdesktop:matrix.org)
 
 [Telegram](https://t.me/sonic_de)
 
 ## Per-Project Status
 
-Current Version: __6.6.5 / 6.26.0 !__
+Current Version: __6.7.1 / 6.27.0 !__
 
 | Project | Status | Replaces |
 | ------------- |:-------------:|:-------------:|
@@ -52,8 +54,8 @@ flake.nix
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # unstable is preferred. 26.05 is not tested, but should be good.
-    sonic-de.url = "github:sonicde-nixos/sonic-flake/";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # 26.05 is not supported. However, the 6.6.5 release does support 26.05! 
+    sonic-de.url = "github:sonicde-nixos/sonic-flake/6.7.1";
     sonic-de.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, nixpkgs, sonic-de ... }@inputs: {
