@@ -65,6 +65,9 @@ flake.nix
         # this module will allow you to just set an option to enable Sonic-DE!
         "${sonic-de}/sonic-de.nix"
 
+        # this module is also present; DO NOT USE IT YET.
+        "${sonic-de}/sonic-login-manager.nix"
+
         ./configuration.nix
 
       ];
@@ -82,6 +85,8 @@ configuration.nix
 
 {
   services.desktopManager.sonic-de.enable = true; # if you used the module we provide!
+
+  services.displayManager.sonic-login-manager.enable = true; # this is only for testing purposes. do not use.
 
   environment.systemPackages = with pkgs; [
     # normal packages
