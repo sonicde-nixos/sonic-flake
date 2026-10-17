@@ -45,3 +45,25 @@ index 0000000..726065d
 +}// namespace
 +
 +#endif // NIXOS_UTILS_H
+diff --git a/src/utils/serviceutils.h b/src/utils/serviceutils.h
+--- a/src/utils/serviceutils.h
++++ b/src/utils/serviceutils.h
+@@ -17,6 +17,7 @@
+ #include <QProcess>
+ // KF
+ #include <KApplicationTrader>
++#include "nixos_utils.h"
+ 
+ namespace KWin
+ {
+@@ -24,8 +25,9 @@
+ const static QString s_waylandInterfaceName = QStringLiteral("X-KDE-Wayland-Interfaces");
+ const static QString s_dbusRestrictedInterfaceName = QStringLiteral("X-KDE-DBUS-Restricted-Interfaces");
+ 
+-static QStringList fetchProcessServiceField(const QString &executablePath, const QString &fieldName)
++static QStringList fetchProcessServiceField(const QString &in_executablePath, const QString &fieldName)
+ {
++    const QString executablePath = unwrapExecutablePath(in_executablePath);
+     // needed to be able to use the logging category in a header static function
+     static QLoggingCategory KWIN_UTILS("KWIN_UTILS", QtWarningMsg);
+     const auto servicesFound = KApplicationTrader::query([&executablePath](const KService::Ptr &service) {
