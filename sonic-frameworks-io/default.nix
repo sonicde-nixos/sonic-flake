@@ -46,12 +46,20 @@ mkSonicDerivation {
     #kcoreaddons
     ki18n
     kwidgetsaddons
+    # vendor-patch: REQUIRED finds in CMakeLists (KF6Archive via kioworkers,
+    # ColorScheme/IconThemes/ItemViews behind !KIOGUI_ONLY)
+    karchive
+    kcolorscheme
+    kiconthemes
+    kitemviews
   ])
   ++ (with Sonic-DE; [
     sonic-frameworks-auth
     sonic-frameworks-cmake-modules
     sonic-frameworks-core-addons
     sonic-frameworks-windowsystem
+    # vendor-patch: KF6GuiAddons REQUIRED
+    sonic-frameworks-gui-addons
   ]);
 
   propagatedDependencies = with pkgs; [
