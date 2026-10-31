@@ -12,6 +12,11 @@ mkSonicDerivation {
     })
   ];
 
+  # vendor-patch: cmake/Findutmps.cmake ignores libutmps.pc's Libs.private,
+  # so static libutmps.a leaves skalibs symbols (ipc_timed_send/recv etc.)
+  # unresolved
+  NIX_LDFLAGS = "-lskarnet";
+
   postPatch = ''
     substituteInPlace src/frontend/startkde/soniclogin-kwin_x11.service.in \
       --replace '@CMAKE_INSTALL_FULL_BINDIR@' '${Sonic-DE.sonic-win}/bin'
@@ -20,6 +25,8 @@ mkSonicDerivation {
   buildDependencies = with pkgs; [
     pam
     utmps
+    # vendor-patch: utmps' static lib needs skalibs (ipc_timed_send/recv)
+    skalibs
     libcap
   ] 
   ++ (with pkgs.kdePackages; [
