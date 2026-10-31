@@ -13,6 +13,21 @@ in
 
   qtWrapperArgs = [ "--prefix PATH : ${pkgs.lib.makeBinPath [ gsettings-wrapper ]}" ];
 
+  # vendor-patch: (a) drop the fork's Q_DECLARE_OPAQUE_POINTER additions,
+  # stock plasma-desktop has neither line; (b) restore the trailing
+  # `#include "moc_*.cpp"` lines the fork snapshot dropped - without them
+  # AUTOMOC builds one big mocs_compilation TU where KDEDConfig's
+  # ModulesModel*/FilterProxyModel* property metatypes hit incomplete-type
+  # static asserts with Qt 6.12 (stock 6.7.1/6.8.1 include the mocs per-TU)
+  postPatch = ''
+    substituteInPlace kcms/kded/kcmkded.h \
+      --replace-fail "Q_DECLARE_OPAQUE_POINTER(ModulesModel *)" "" \
+      --replace-fail "Q_DECLARE_OPAQUE_POINTER(FilterProxyModel *)" ""
+    for f in kcmkded modulesmodel filterproxymodel; do
+      printf '\n#include "moc_%s.cpp"\n' "$f" >> "kcms/kded/$f.cpp"
+    done
+  '';
+
   patches = [
     #(pkgs.replaceVars ./hwclock-path.patch {
     #  hwclock = "${pkgs.lib.getBin pkgs.util-linux}/bin/hwclock";
@@ -123,7 +138,10 @@ in
     knighttime
     kdecoration
 
-    kscreenlocker
+    # vendor-patch: nixpkgs kscreenlocker-6.8.1 propagates
+    # libplasma/libkscreen 6.8.1-dev which clashes with the 6.7.1 sonic
+    # forks; sonic-screenlocker provides KScreenLocker where REQUIRED
+    #kscreenlocker
 
     kirigami
     kirigami-addons
@@ -141,6 +159,10 @@ in
   ++ (with Sonic-DE; [
     sonic-win
     sonic-workspace
+    # vendor-patch: Plasma/PlasmaQuick, KSysGuard, ScreenSaverDBusInterface REQUIRED
+    sonic-interface-libraries
+    sonic-sysguard-library
+    sonic-screenlocker
   ]);
 
   propagatedDependencies = with pkgs; [

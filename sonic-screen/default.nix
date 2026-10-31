@@ -23,7 +23,9 @@ mkSonicDerivation {
     ksvg
     kxmlgui
     kcrash
-    libkscreen
+    # vendor-patch: nixpkgs libkscreen 6.8.1 dropped supportedFeatures/
+    # connectedOutputsHash; use the matching 6.7.1 fork (sonic-screen-library)
+    # libkscreen
     kpackage
     kimageformats
     kitemmodels
@@ -32,6 +34,7 @@ mkSonicDerivation {
   ++ (with Sonic-DE; [
     sonic-frameworks-cmake-modules
     sonic-interface-libraries
+    sonic-screen-library
   ]);
 
   propagatedDependencies = with pkgs; [

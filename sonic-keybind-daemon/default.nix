@@ -40,6 +40,9 @@ mkSonicDerivation {
     #qtquick
     qtshadertools
     qtsensors
+    # vendor-patch: KF6Crash/KF6JobWidgets REQUIRED (CMakeLists 48, 54)
+    kcrash
+    kjobwidgets
   ])
   ++ (with Sonic-DE; [
     sonic-frameworks-io

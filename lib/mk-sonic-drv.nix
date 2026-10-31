@@ -157,6 +157,9 @@ let
     ]
     ++ lib.optionals hasPythonBindings [
       python3Packages.shiboken6
+      # vendor-patch: nixpkgs split the shiboken6 generator binary out of shiboken6;
+      # the executable lives in this package (mirrors nixpkgs mk-kde-derivation).
+      python3Packages.shiboken6-generator
       (python3.withPackages (ps: [
         ps.build
         ps.setuptools

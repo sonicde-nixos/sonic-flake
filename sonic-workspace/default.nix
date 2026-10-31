@@ -142,7 +142,10 @@ mkSonicDerivation {
     knighttime
     #kdecoration
 
-    kscreenlocker
+    # vendor-patch: nixpkgs kscreenlocker-6.8.1 propagates
+    # libplasma/libkscreen 6.8.1-dev which clashes with the 6.7.1 sonic
+    # forks; sonic-screenlocker provides KScreenLocker where REQUIRED
+    #kscreenlocker
 
     #kio
     kfilemetadata
@@ -169,7 +172,10 @@ mkSonicDerivation {
     #layer-shell-qt
 
     phonon
-    kscreen
+    # vendor-patch: nixpkgs kscreen-6.8.1 propagates libplasma/libkscreen
+    # 6.8.1-dev, which clashes with the 6.7.1 sonic forks; kscreenlocker has
+    # no build-time use for the kscreen app
+    #kscreen
     kholidays
 
     kquickcharts
@@ -194,6 +200,9 @@ mkSonicDerivation {
     sonic-decoration
     sonic-interface-libraries
     sonic-activities
+    # vendor-patch: KF6Screen, KScreenLocker/ScreenSaverDBusInterface REQUIRED
+    sonic-screen-library
+    sonic-screenlocker
   ]);
 
   propagatedDependencies = with pkgs; [
