@@ -98,8 +98,13 @@ mkSonicDerivation {
     plasma5support
     #plasma-workspace
 
-    libplasma
-    kscreen
+    # vendor-patch: nixpkgs libplasma 6.8.1 lacks SharedQmlEngine; use the
+    # 6.7.1 fork (sonic-interface-libraries, added below) instead
+    #libplasma
+    # vendor-patch: nixpkgs kscreen-6.8.1 propagates libplasma/libkscreen
+    # 6.8.1-dev, which clashes with the 6.7.1 sonic forks; kscreenlocker has
+    # no build-time use for the kscreen app
+    #kscreen
 
     kirigami
 
@@ -111,7 +116,11 @@ mkSonicDerivation {
     sonic-keybind-daemon
     sonic-frameworks-io
     sonic-frameworks-auth
-    sonic-workspace
+    # vendor-patch: KF6Screen and PlasmaQuick REQUIRED; sonic-workspace entry
+    # removed (nothing in the source references it, and it would cycle with
+    # plasma-workspace's REQUIRED KScreenLocker find)
+    sonic-screen-library
+    sonic-interface-libraries
   ]);
 
   propagatedDependencies = with pkgs; [
